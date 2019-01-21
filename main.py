@@ -1,6 +1,7 @@
 # author: me
 # date: today
 # description: this transmits housing data from Craigslist to Slack
+# instructions: you can do whatever you want to the code underneath.
 #
 # steps:
 # 1. get data from Craigslist
@@ -10,7 +11,8 @@
 
 from craigslist import CraigslistHousing
 from slackclient import SlackClient
-import json  # used to get Slack API key and Slack destination channel
+import json  # used to get Slack API key and destination from credentials.json
+
 
 # 1. get data from Craigslist
 #
@@ -18,18 +20,22 @@ import json  # used to get Slack API key and Slack destination channel
 # https://github.com/juliomalegria/python-craigslist
 
 cl_h = CraigslistHousing(site='vancouver', area='van', category='roo',
-                         filters={'max_price': 1000, 'private_room': True})
+                         filters={'min_price': 500, 'max_price': 1000,
+                                  'private_room': True})
+
+# look at the link and analyze it with the code above
+# https://vancouver.craigslist.org/search/van/roo?min_price=500&max_price=1000
 
 housing_data = []
 for result in cl_h.get_results(sort_by='newest', geotagged=True, limit=5):
-    if result.get('has_map') is True:
-        data = {
-            'price': result.get('price'),
-            'title': result.get('name'),
-            'url': result.get('url'),
-            'geotag': result.get('geotag')
-        }
-        housing_data.append(data)
+    data = {
+        'price': result.get('price'),
+        'title': result.get('name'),
+        'url': result.get('url'),
+        'geotag': result.get('geotag')
+    }
+    housing_data.append(data)
+
 
 # 2. do stuff with the data
 #
@@ -48,6 +54,7 @@ for house in housing_data:
         if (latitudes[0] < house_lat) and (house_lat < latitudes[1]):
             filtered_housing_data.append(house)
 
+
 # 3. post data to Slack
 #
 # documentation here
@@ -59,12 +66,12 @@ with open('credentials.json') as credentials:
 
 
 slack_token = credentials['SLACK_API_KEY']
-slack_destination = credentials['SLACK_CHANNEL']
+slack_destination = credentials['SLACK_DESTINATION']
 
 sc = SlackClient(slack_token)
 
 results = "Your listings:\n"
-for house in housing_data:
+for house in filtered_housing_data:  # try changing it to housing_data
     results += house.get('title') + '\n' + house.get('price') + '\n' + \
         house.get('url') + '\n\n'
 
