@@ -5,7 +5,7 @@ This is a simple program that gets room rentals from Craigslist then posts them 
 The goal of this workshop is not only for you to understand how the code here works, but also for you to
 be able to add more functionality or features.
 
-### Prereqisites
+### Prerequisites
 - A basic understanding of HTTP requests (GET and POST)
 - A basic understanding of HTML (the tags: div, h1, p, etc.)
 - Knowing a few things about the *Requests* and *BeautifulSoup* libraries would be good 
