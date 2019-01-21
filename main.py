@@ -76,9 +76,9 @@ for house in filtered_housing_data:  # try changing it to housing_data
         house.get('url') + '\n\n'
 
 sc.api_call(
-  "chat.postMessage",
-  channel=slack_destination,
-  text=results
+    "chat.postMessage",
+    channel=slack_destination,
+    text=results
 )
 
 # some sample output on Slack
