@@ -36,11 +36,15 @@ In other words, Slack will be able to trust and receive data from the Python pro
 4. When you select the channel you created, look at the URL. Get the thing that looks like **CE16CKMC4**.
 5. Remember that. That is the channel address. You will use the OAuth and the channel address in the next section.
 
-#### Create a credentials.json file
+#### Create a **credentials.json** file
 1. In your project directory, create a credentials.json file that looks like this:
 ```
-credentials={SLACK_API_KEY: "**YOUR_SLACK_OAUTH**", SLACK_DESTINATION: "**YOUR_SLACK_CHANNEL_ADDRESS**"}
+{
+  "SLACK_API_KEY": "xoxp-123456789123-987654321654-741852963741-828ae87c2ccad196807c70cbbed78780",
+  "SLACK_DESTINATION": "CKAAW0AOP"
+}
 ```
+You need to use your own Slack API key (OAuth) and Slack destination (from the channel you created)
 
 #### Running the code
 1. You can just copy and paste the code from main.py in a Python file in your project directory.
