@@ -10,7 +10,6 @@ be able to add more functionality or features.
 - A basic understanding of HTML (the tags: div, h1, p, etc.)
 - Knowing a few things about the *Requests* and *BeautifulSoup* libraries would be good 
 
-
 ### To get started:
 #### Set up the development/coding environment
 1. Go to codenvy.com and create an account (you can use your own IDE, but for the sake of having the same
@@ -22,8 +21,8 @@ environments in the workshop, we will use this cloud-based IDE).
 #### Installing required packages
 1. In the terminal, type:
 ```
-pip install python-craigslist
-pip install slackclient
+pip install python-craigslist --user
+pip install slackclient --user
 ```
 2. These two are required to make the code run.
 
