@@ -29,13 +29,14 @@ pip install slackclient --user
 2. These two are required to make the code run.
 
 #### Set up your Slack account
-1. Create a new Slack app here: <https://api.slack.com/apps>. You may have to sign up and verify your email.
-2. This is required so the Python program in your computer or Codenvy can have the ability to "speak" to Slack. 
+1. Create a Slack workspace.
+2. Create a new Slack app here: <https://api.slack.com/apps>. You may have to sign up and verify your email.
+3. This is required so the Python program in your computer or Codenvy can have the ability to "speak" to Slack. 
 In other words, Slack will be able to trust and receive data from the Python program.
-3. Find the OAuth section. Get the OAuth access token with the permission "Send messages as bot".
-3. Remember the OAuth. Now head to Slack itself then create a channel. Name it whatever you want.
-4. When you select the channel you created, look at the URL. Get the thing that looks like **CE16CKMC4**.
-5. Remember that. That is the channel address. You will use the OAuth and the channel address in the next section.
+4. Find the OAuth section. Get the OAuth access token with the permission "Send messages as bot".
+5. Remember the OAuth. Now head to Slack itself then create a channel. Name it whatever you want.
+6. When you select the channel you created, look at the URL. Get the thing that looks like **CE16CKMC4**.
+7. Remember that. That is the channel address. You will use the OAuth and the channel address in the next section.
 
 #### Create a **credentials.json** file
 1. In your project directory, create a credentials.json file that looks like this:
