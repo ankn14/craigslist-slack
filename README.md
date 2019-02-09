@@ -17,6 +17,8 @@ environments in the workshop, we will use this cloud-based IDE).
 2. Sign up for an account.
 3. Create a workspace and choose Python as the technology stack. You can create a team if you want.
 4. That's it. You may have to verify you account, so be prepared to check for an email.
+5. In Codenvy, go to import this repository (Workspace > Import Project > Git).
+6. Go to the project directory ("cd project_name" in the terminal).
 
 #### Installing required packages
 1. In the terminal, type:
@@ -46,19 +48,15 @@ In other words, Slack will be able to trust and receive data from the Python pro
 You need to use your own Slack API key (OAuth) and Slack destination (from the channel you created)
 
 #### Running the code
-1. You can just copy and paste the code from main.py in a Python file in your project directory.
-2. Alternatively, you can clone the repository to Codenvy or your computer. But only do this if you know how to do it or want to 
-get your hands dirty with git.
-3. After you do the above, your project directory should look like this:
+1. At this point, your project directory should look like this:
 ```
 the_project_directory
 ├── credentials.json        # Your Slack API access key and Slack channel destination.
 ├── main.py                 # Work on this. Make it better, cooler, and more useful.
+├── LICENSE                 # Just a license
+├── README.md               # Just a README
 ```
 
 #### Afterword
 This is meant for educational purposes only. Our primary goal is to make more people become better at problem solving by 
-designing their own computer programs. The workshop focuses on that problem solving and design process rather than learning about
-Python syntax/code.
-
-Thanks. - AK
+designing their own computer programs. The workshop focuses on that problem solving and design process rather than learning about Python syntax/code.
